@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import type { ProjectDTO } from '@/models/Project';
-import axios, { type AxiosResponse } from 'axios';
-import { onBeforeMount, ref } from 'vue'
 import Project from './Project.vue';
 import { useProjects } from '@/stores/projetsStore';
 import { computed } from 'vue'
@@ -12,17 +9,15 @@ var props = defineProps<{
 
 const projectsStore = useProjects();
 const projects = computed(() => {
-    return projectsStore.getAllFrontPageOnly
+    if(props.frontPageOnly) 
+        return projectsStore.getAllFrontPageOnly
+    return projectsStore.getAll
 });
 </script>
 
 <template>
-    <div class="animated bg-white w-[95%] shadow-sm mt-8">
-        <div class="m-8">
-            <div class="dynamic-grid">
-                <Project v-for="(item, index) in projects" :key="index" :item />
-            </div>
-        </div>
+    <div class="dynamic-grid">
+        <Project v-motion-slide-up v-for="(item, index) in projects" :key="index" :item />
     </div>
 </template>
 

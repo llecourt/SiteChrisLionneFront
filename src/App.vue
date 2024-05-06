@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import SideBar from './components/SideBar/SideBar.vue';
+import SideBar from './components/SideBar.vue';
 import { useProjects } from './stores/projetsStore';
 
 const items = [{ label: 'Accueil', url: '/' },
-        { label: 'Prestations', url: 'prestations' },
-        { label: 'Galerie', url: 'galerie' },
-        { label: 'Contact', url: 'contact' }]
+        { label: 'Prestations', url: '/prestations' },
+        { label: 'Galerie', url: '/galerie' },
+        { label: 'Contact', url: '/contact' }]
 const projectsStore = useProjects();
 projectsStore.init();
 </script>

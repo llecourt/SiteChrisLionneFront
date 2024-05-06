@@ -1,13 +1,14 @@
 import { createMemoryHistory, createRouter } from 'vue-router'
 
 import App from './App.vue'
-import Accueil from './components/Accueil/Accueil.vue'
-import ProjectDetails from './components/ListProjects/ProjectDetails.vue'
+import Accueil from './components/Accueil.vue'
+import ProjectDetails from './components/ProjectDetails.vue'
+import Galerie from './components/Galerie.vue'
 
 const routes = [
   { path: '/', component: Accueil },
   { path: '/prestations', component: App },
-  { path: '/galerie', component: App },
+  { path: '/galerie', component: Galerie },
   { path: '/contact', component: App },
   { path: '/partenaires', component: App },
   { name: 'project-details', path : '/project-details/:id', component: ProjectDetails }

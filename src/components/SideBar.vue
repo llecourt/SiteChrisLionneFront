@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import type { MenuItem } from 'primevue/menuitem';
-import Menu from 'primevue/menu';
-import Icon from '../Icon/Icon.vue';
+import Icon from './Icon.vue';
 
 defineProps<{
     items: MenuItem[]
@@ -9,7 +8,7 @@ defineProps<{
 </script>
 
 <template>
-  <Transition mode="in-out">
+  <Transition name="slide" mode="in-out">
   <div class="hidden md:flex fixed md:w-sidebar-margin h-screen flex-col bg-[#111111]">
     <div class="mx-[20%] my-12">
       <img class="object-contain" src="\src\assets\logo.jpg"/>
@@ -29,15 +28,15 @@ defineProps<{
 
 
 <style>
-.v-enter-active,
-.v-leave-active {
+.slide-enter-active,
+.slide-leave-active {
     transition: all 0.5s ease-in-out;
     position: absolute;
     margin-left: 15%
 }
 
-.v-enter-from,
-.v-leave-to {
+.slide-enter-from,
+.slide-leave-to {
     transform: translateY(100%)
 }
 </style>

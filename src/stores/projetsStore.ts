@@ -12,7 +12,7 @@ export const useProjects = defineStore('projects', {
         return state._projects as ProjectDTO[]
     },
     getAllFrontPageOnly(state) {
-        return state._projects.filter(i => i.is_front_page = true) as ProjectDTO[];
+        return state._projects.filter(i => i.is_front_page == true) as ProjectDTO[];
     },
     getById(state) {
         return (id : string) : ProjectDTO | undefined => state._projects.find(i => i.id == id);
@@ -37,6 +37,23 @@ export const useProjects = defineStore('projects', {
             if(prevIndex <= -1)
                 return undefined;
             return state._projects[prevIndex];
+        }
+    },
+    getTags(state) {
+        const tmp = [] as string[][];
+        state._projects.forEach(e => tmp.push(e.tags));
+        return [... new Set(tmp.flat())];
+    },
+    getFiltered(state) {
+        return(filters: string[]): ProjectDTO[] => {
+            let filtered = [] as ProjectDTO[];
+            if(filters.length == 0)
+                return state._projects;
+            state._projects.forEach(project => {
+                if(filters.every(filter => project.tags.includes(filter)))
+                    filtered.push(project);
+            });
+            return filtered;
         }
     }
   },
