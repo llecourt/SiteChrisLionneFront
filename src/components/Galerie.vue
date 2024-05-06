@@ -8,6 +8,11 @@ import MasonryGrid from './UI/MasonryGrid.vue';
 import Project from './Project.vue';
 import { ref } from 'vue';
 import Tag from './UI/Tag.vue';
+import { useRoute } from 'vue-router'
+import { onMounted } from 'vue';
+
+const route = useRoute();
+const basefilter = ref(route.params.basefilter as string);
 
 const currentFilter = ref([] as string[]);
 
@@ -23,6 +28,13 @@ const handleClick = (tag: string) => {
         currentFilter.value.push(tag);
     }
 }
+
+onMounted(() => {
+    console.log(basefilter.value);
+    if(basefilter != undefined && basefilter.value != '') {
+        currentFilter.value.push(basefilter.value);
+    }
+});
 </script>
 
 <template>

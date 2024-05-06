@@ -8,7 +8,7 @@ import Galerie from './components/Galerie.vue'
 const routes = [
   { path: '/', component: Accueil },
   { path: '/prestations', component: App },
-  { path: '/galerie', component: Galerie },
+  { name: 'galerie', path: '/galerie/:basefilter?', component: Galerie },
   { path: '/contact', component: App },
   { path: '/partenaires', component: App },
   { name: 'project-details', path : '/project-details/:id', component: ProjectDetails }

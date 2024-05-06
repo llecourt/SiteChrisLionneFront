@@ -7,6 +7,7 @@ import { useProjects } from '@/stores/projetsStore';
 import Card from './UI/Card.vue';
 import MainContent from './UI/MainContent.vue';
 import Tag from './UI/Tag.vue';
+import { router } from '@/router';
 
 const route = useRoute();
 const id = ref(route.params.id as string);
@@ -15,8 +16,8 @@ const item = computed(() => projectsStore.getById(id.value));
 const prevProjectId = computed(() => projectsStore.getPrevious(id.value));
 const nextProjectId = computed(() => projectsStore.getNext(id.value));
 
-const handleClick = () => {
-
+const handleClick = (tag: string) => {
+    router.push({ name: 'galerie', params: { basefilter: tag } });
 }
 
 </script>
@@ -37,7 +38,7 @@ const handleClick = () => {
         </div>
         <Card shadow="md">
             <p class="text-2xl font-bold my-8">{{ item.title }}</p>
-            <Tag v-for="(tag) in item.tags" :label="tag" :clickable="true" :handleClick/>
+            <Tag v-for="(tag) in item.tags" :label="tag" :clickable="true" :handleClick="() => handleClick(tag)"/>
             <p class="my-8"></p>
             <p v-for="(paragraph, index) in item.paragraphs" :key="index" class="mb-4">{{ paragraph }}</p>
         </Card>
