@@ -4,20 +4,22 @@ import ListProjects from './ListProjects.vue';
 import Card from './UI/Card.vue';
 import MainContent from './UI/MainContent.vue';
 import Background from './UI/Background.vue';
+import TitleText from './UI/TitleText.vue';
+import ParagraphText from './UI/ParagraphText.vue';
+import Separator from './UI/Separator.vue';
+import OverImageText from './UI/OverImageText.vue';
 </script>
 
 <template>
-    <MainContent>
-        <img class="fixed -z-10 mt-[-18%] brightness-50" :src="parseUrlFromName('bg-2.jpg')" height="100%" width="100%"/>
-        <p class="absolute mt-[11%] w-[100%] md:reduced text-xl sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white text-center">DESSINATRICE EN ARCHITECTURE <br/> LANDES & PAYS BASQUE</p>
-        <Background class="mt-[35%]">
-            <Card :animated="true">
-                <p class="mt-4 font-bold text-3xl mb-4 text-neutral-900 text-center md:text-left">Dessinatrice indépendante et conseillère en architecture d’intérieur</p>
-                <p class="text-justify text-neutral-700 text-lg">Je vous accompagne pour vos projets de construction, d’extension, de rénovation ou d’aménagement d’intérieur de la phase de conception jusqu’au permis de construire</p>
-            </Card>
-            <Card :animated="true">
-                <ListProjects :frontPageOnly="true"/>
-            </Card>
-        </Background>
-    </MainContent>
+    <div class="-z-10 w-full h-[40vw] fixed bg-stone-900"></div>
+    <img class="fixed -z-10 mt-[-18%] brightness-50" :src="parseUrlFromName('bg-2.jpg')" height="100%" width="100%" loading="lazy"/>
+    <OverImageText class="mt-[12vw] overflow-hidden"><p class="text-reveal">DESSINATRICE EN ARCHITECTURE <br/> LANDES & PAYS BASQUE</p></OverImageText>
+    <Background class="mt-[35%]">
+        <Card>
+            <TitleText>Dessinatrice indépendante et conseillère en architecture d’intérieur</TitleText>
+            <ParagraphText class="text-lg">Je vous accompagne pour vos projets de construction, d’extension, de rénovation ou d’aménagement d’intérieur de la phase de conception jusqu’au permis de construire</ParagraphText>
+            <Separator />
+            <ListProjects :frontPageOnly="true"/>
+        </Card>
+    </Background>
 </template>

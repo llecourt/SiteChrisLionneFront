@@ -10,6 +10,8 @@ import { ref } from 'vue';
 import Tag from './UI/Tag.vue';
 import { useRoute } from 'vue-router'
 import { onMounted } from 'vue';
+import TitleText from './UI/TitleText.vue';
+import Loader from './UI/Loader.vue';
 
 const route = useRoute();
 const basefilter = ref(route.params.basefilter as string);
@@ -30,7 +32,6 @@ const handleClick = (tag: string) => {
 }
 
 onMounted(() => {
-    console.log(basefilter.value);
     if(basefilter != undefined && basefilter.value != '') {
         currentFilter.value.push(basefilter.value);
     }
@@ -38,19 +39,17 @@ onMounted(() => {
 </script>
 
 <template>
-    <MainContent>
-        <Background>
-            <Card>
-                <p class="mt-4 font-bold text-3xl mb-4 text-neutral-900 text-center md:text-left">Voici quelques exemples de réalisations.</p>
-                <Tag v-for="(tag) in tags" :label="tag" :clickable="true" :handleClick="() => handleClick(tag)" :active="currentFilter.indexOf(tag) != -1"/>
-                <MasonryGrid>
-                    <TransitionGroup name="list">
-                        <Project v-for="(item, index) in projects" :item :fixedSize="false" :key="item.id"/>
-                    </TransitionGroup>
-                </MasonryGrid>
-            </Card>
-        </Background>
-    </MainContent>
+    <Background>
+        <Card>
+            <TitleText>Quelques exemples de réalisations.</TitleText>
+            <Tag v-for="(tag) in tags" :label="tag" :clickable="true" :handleClick="() => handleClick(tag)" :active="currentFilter.indexOf(tag) != -1"/>
+            <MasonryGrid class="min-h-[75vh]">
+                <TransitionGroup name="list">
+                    <Project v-for="(item, index) in projects" :item :fixedSize="false" :key="item.id"/>
+                </TransitionGroup>
+            </MasonryGrid>
+        </Card>
+    </Background>
 </template>
 
 <style>

@@ -2,6 +2,7 @@
 import Project from './Project.vue';
 import { useProjects } from '@/stores/projetsStore';
 import { computed } from 'vue'
+import Loader from './UI/Loader.vue';
 
 var props = defineProps<{
     frontPageOnly?: boolean

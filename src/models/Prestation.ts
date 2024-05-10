@@ -1,7 +1,8 @@
 import type { ImageDTO } from "./Image";
 
 export interface PresentationDTO {
+    id: string,
     title : string,
-    description : string,
+    paragraphs : string[],
     image : ImageDTO,
 }
