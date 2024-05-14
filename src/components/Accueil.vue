@@ -12,7 +12,7 @@ import OverImageText from './UI/OverImageText.vue';
 
 <template>
     <div class="-z-10 w-full h-[40vw] fixed bg-stone-900"></div>
-    <img class="fixed -z-10 mt-[-18%] brightness-50" :src="parseUrlFromName('bg-2.jpg')" height="100%" width="100%" loading="lazy"/>
+    <img class="fixed -z-10 mt-[-18%] brightness-50" :src="parseUrlFromName('bg-2.jpg')" height="100%" width="100%" />
     <OverImageText class="mt-[12vw] overflow-hidden"><p class="text-reveal">DESSINATRICE EN ARCHITECTURE <br/> LANDES & PAYS BASQUE</p></OverImageText>
     <Background class="mt-[35%]">
         <Card>

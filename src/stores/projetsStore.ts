@@ -60,7 +60,7 @@ export const useProjects = defineStore('projects', {
   actions: {
     init() {
         if(this._init) return;
-        axios('https://localhost:7258/projects')
+        axios('https://sitechris-geobejt3ca-ew.a.run.app/projects')
         .then((res) => {
             this._projects = res.data
             this._init = true;

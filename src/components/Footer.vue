@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import ParagraphText from './UI/ParagraphText.vue';
+import Separator from './UI/Separator.vue';
 </script>
 
 <template>
@@ -7,7 +8,10 @@ import ParagraphText from './UI/ParagraphText.vue';
   <div class="grid gap-4 row-gap-6 sm:grid-cols-2 lg:grid-cols-3">
     <div class="grid sm:col-span-2">
         <ParagraphText class="text-xl md:text-3xl font-bold md:self-center justify-self-auto">
-                Chris Lionne Dessinatrice
+                Chris Lionne
+            </ParagraphText>
+            <ParagraphText class="text-lg md:text-xl">
+              Dessinatrice en architecture
             </ParagraphText>
     </div>
     <div class="space-y-2">
@@ -19,8 +23,9 @@ import ParagraphText from './UI/ParagraphText.vue';
       </ParagraphText>
     </div>
   </div>
-  <div class="pt-4 lg:p-0">
+  <div class="pt-4 lg:pt-12 text-gray-500">
     <a href="">Mentions Légales</a>
+    | Créé par Léo Lecourt
   </div>
 </div>
 </template>

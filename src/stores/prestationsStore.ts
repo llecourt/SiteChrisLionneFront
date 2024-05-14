@@ -15,7 +15,7 @@ export const usePrestations = defineStore('prestations', {
     actions: {
         init() {
             if(this._init) return;
-            axios('https://localhost:7258/prestations')
+            axios('https://sitechris-geobejt3ca-ew.a.run.app/prestations')
             .then((res) => {
                 this._prestations = res.data
                 this._init = true;

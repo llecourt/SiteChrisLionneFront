@@ -4,67 +4,15 @@
 
 @layer base {
     @font-face {
-        font-family: 'Louis George Cafe';
-        src: url('./assets/Louis\ George\ Cafe\ Italic.ttf')  format('truetype'),
-            url('./assets/LouisGeorgeCafe-Italic.woff2') format('woff2'),
-            url('./assets/LouisGeorgeCafe-Italic.woff') format('woff');
-        font-weight: normal;
-        font-style: italic;
-        font-display: swap;
-    }
-    
-    @font-face {
-        font-family: 'Louis George Cafe';
-        src: url('./assets/Louis\ George\ Cafe\ Light\ Italic.ttf')  format('truetype'),
-            url('./assets/LouisGeorgeCafeLight-.woff2') format('woff2'),
-            url('./assets/LouisGeorgeCafeLight-.woff') format('woff');
-        font-weight: 300;
-        font-style: italic;
-        font-display: swap;
-    }
-    
-    @font-face {
-        font-family: 'Louis George Cafe';
-        src: url('./assets/Louis\ George\ Cafe\ Bold.ttf')  format('truetype'),
-            url('./assets/LouisGeorgeCafe-Bold.woff2') format('woff2'),
-            url('./assets/LouisGeorgeCafe-Bold.woff') format('woff');
-        font-weight: bold;
-        font-style: normal;
-        font-display: swap;
-    }
-    
-    @font-face {
-        font-family: 'Louis George Cafe';
-        src: url('./assets/Louis\ George\ Cafe\ Light.ttf')  format('truetype'),
-            url('./assets/LouisGeorgeCafeLight-.woff2') format('woff2'),
-            url('./assets/LouisGeorgeCafeLight-.woff') format('woff');
-        font-weight: 300;
-        font-style: normal;
-        font-display: swap;
-    }
-    
-    @font-face {
-        font-family: 'Louis George Cafe';
-        src: url('./assets/Louis\ George\ Cafe\ Bold\ Italic.ttf')  format('truetype'),
-            url('./assets/LouisGeorgeCafe-BoldItalic.woff2') format('woff2'),
-            url('./assets/LouisGeorgeCafe-BoldItalic.woff') format('woff');
-        font-weight: bold;
-        font-style: italic;
-        font-display: swap;
-    }
-    
-    @font-face {
-        font-family: 'Louis George Cafe';
-        src: url('./assets/Louis\ George\ Cafe.ttf')  format('truetype'),
-            url('./assets/LouisGeorgeCafe.woff2') format('woff2'),
-            url('./assets/LouisGeorgeCafe.woff') format('woff');
+        font-family: 'Century Gothic';
+        src: url('./assets/SansSerifBookFLF.otf')  format('truetype');
         font-weight: normal;
         font-style: normal;
         font-display: swap;
     }
     
     html * {
-        font-family: 'Louis George Cafe';
+        font-family: 'Century Gothic';
     }
 }
 

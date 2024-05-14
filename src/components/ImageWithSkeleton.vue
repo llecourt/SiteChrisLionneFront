@@ -3,9 +3,8 @@ import { ref, type ImgHTMLAttributes } from 'vue';
 
 interface Props {
     src: string
-    size?: { width: number, height: number }
 }
-withDefaults(defineProps<Props>(), {});
+defineProps<Props>();
 let loaded = ref(false);
 </script>
 

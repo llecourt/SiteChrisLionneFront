@@ -21,15 +21,15 @@ watchEffect(() => {
 <template>
   <Transition name="slide">
     <div v-if="show || isLargeScreen" class="lg:flex fixed w-[70%] md:w-[50%] lg:w-sidebar-margin h-full flex-col bg-stone-950 z-50 overflow-x-hidden overflow-y-scroll lg:overflow-y-hidden">
-      <div v-if="show" class="flex h-16 w-16 items-center justify-center" @click="show = false">
+      <div v-if="show" class="flex h-16 w-16 items-center justify-center absolute" @click="show = false">
         <i class="pi pi-times text-white text-3xl"></i>
       </div>
-      <div class="mx-[20%] my-12">
-        <img class="object-contain" src="\src\assets\logo.jpg"/>
+      <div class="mx-[15%] mt-16">
+        <img class="object-contain" src="\src\assets\logo.png"/>
       </div>
       <div class="my-auto">
         <div class="my-8" v-for="(item, index) in items">
-          <RouterLink :to=item.uri!><p class="text-center font-bold text-lg text-white hover:text-kaki transition ease-in-out delay-50 hover:scale-110" @click="show = false">{{ item.name }}</p></RouterLink>
+          <RouterLink :to=item.uri!><p class="text-center font-bold text-2xl text-white hover:text-kaki transition ease-in-out delay-50 hover:scale-110" @click="show = false">{{ item.name }}</p></RouterLink>
         </div>
       </div>
       <div class="flex mb-4 justify-center">
