@@ -1,12 +1,8 @@
 <script setup lang="ts">
-import type { SideBarLink } from '@/models/SideBar';
 import Icon from './Icon.vue';
 import { ref, watchEffect } from 'vue';
 import { useMediaQuery } from '@vueuse/core';
-
-defineProps<{
-    items: SideBarLink[]
-}>()
+import { routesToShow } from '@/router';
 
 const isLargeScreen = useMediaQuery('(min-width: 1024px)')
 const show = ref(false);
@@ -28,8 +24,8 @@ watchEffect(() => {
         <img class="object-contain" src="\src\assets\logo.png"/>
       </div>
       <div class="my-auto">
-        <div class="my-8" v-for="(item, index) in items">
-          <RouterLink :to=item.uri!><p class="text-center font-bold text-2xl text-white hover:text-kaki transition ease-in-out delay-50 hover:scale-110" @click="show = false">{{ item.name }}</p></RouterLink>
+        <div class="my-8" v-for="(item, index) in routesToShow">
+          <RouterLink :to="item.path.split(':')[0]"><p :class="`text-center font-bold text-2xl hover:text-kaki transition ease-in-out delay-50 hover:scale-110 ${$route.name == item.name ? 'text-kaki' : 'text-white'}`" @click="show = false">{{ item.name }}</p></RouterLink>
         </div>
       </div>
       <div class="flex mb-4 justify-center">

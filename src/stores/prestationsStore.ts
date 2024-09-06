@@ -1,11 +1,10 @@
 import type { PresentationDTO } from "@/models/Prestation";
 import { defineStore } from "pinia";
-import axios from "axios";
+import instance from "@/axiosInstance";
 
 export const usePrestations = defineStore('prestations', {
     state: () => ({
-        _prestations: [] as PresentationDTO[],
-        _init: false
+        _prestations: [] as PresentationDTO[]
       }),
     getters: {
         getAll(state) {
@@ -14,11 +13,9 @@ export const usePrestations = defineStore('prestations', {
     },
     actions: {
         init() {
-            if(this._init) return;
-            axios('https://sitechris-geobejt3ca-ew.a.run.app/prestations')
+            instance('prestations')
             .then((res) => {
                 this._prestations = res.data
-                this._init = true;
             });
         },
     }

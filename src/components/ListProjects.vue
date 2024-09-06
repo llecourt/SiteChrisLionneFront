@@ -25,23 +25,18 @@ const projects = computed(() => {
 <style>
 .dynamic-grid {
     display: grid;
-    grid-template-columns: repeat(3, 400px);
+    grid-template-columns: repeat(3, minmax(0, 400px));
     justify-content: center;
     gap: 2rem;
-    grid-template-rows: auto auto;
-    grid-auto-rows: 0px;
-    overflow: hidden;
 }
-@media (max-width: 1650px) {
+@media (max-width: 1280px) {
     .dynamic-grid {
-        grid-template-columns: repeat(2, 400px);
-        grid-template-rows: auto auto auto;
+        grid-template-columns: repeat(2, minmax(0, 400px));
     }
 }
-@media (max-width: 1200px) {
+@media (max-width: 768px) {
     .dynamic-grid {
-        grid-template-columns: repeat(1, 400px);
-        grid-template-rows: auto auto auto auto auto auto;
+        grid-template-columns: repeat(1, minmax(0, 400px));
     }
 }
 </style>

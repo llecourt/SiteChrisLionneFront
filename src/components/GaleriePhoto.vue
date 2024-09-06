@@ -15,7 +15,7 @@ Fancybox.bind('[data-fancybox]', {
 
 <template>
     <MasonryGrid>
-        <div v-motion-slide-up v-for="(image, index) in item.images" class="overflow-hidden shadow-sm">
+        <div v-motion-slide-up v-for="(image, index) in item.images" class="overflow-hidden drop-shadow-md rounded-md">
             <a data-fancybox="gallery" :data-src="parseUrlFromImage(image, 'Projects', item.id)">
                 <img :src="parseUrlFromImage(image, 'Projects', item.id, '500')" alt="image" loading="lazy" class="transition ease-in-out duration-200 hover:scale-125 hover:brightness-50"/>
             </a>

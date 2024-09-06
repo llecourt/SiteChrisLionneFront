@@ -6,7 +6,7 @@ import MainContent from './UI/MainContent.vue';
 import Background from './UI/Background.vue';
 import TitleText from './UI/TitleText.vue';
 import ParagraphText from './UI/ParagraphText.vue';
-import Separator from './UI/Separator.vue';
+import Separator from './UI/separator/Separator.vue';
 import OverImageText from './UI/OverImageText.vue';
 </script>
 
@@ -17,8 +17,8 @@ import OverImageText from './UI/OverImageText.vue';
     <Background class="mt-[35%]">
         <Card>
             <TitleText>Dessinatrice indépendante et conseillère en architecture d’intérieur</TitleText>
-            <ParagraphText class="text-lg">Je vous accompagne pour vos projets de construction, d’extension, de rénovation ou d’aménagement d’intérieur de la phase de conception jusqu’au permis de construire</ParagraphText>
-            <Separator />
+            <ParagraphText class="text-lg">Je vous accompagne pour vos projets de construction, d’extension, de rénovation ou d’aménagement intérieur de la phase de conception jusqu’au permis de construire</ParagraphText>
+            <Separator class="my-8"/>
             <ListProjects :frontPageOnly="true"/>
         </Card>
     </Background>

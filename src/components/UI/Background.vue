@@ -1,5 +1,5 @@
 <template>
-    <div class="flex bg-gray-50 flex-col items-center">
+    <div class="flex bg-white flex-col items-center rounded-t-lg">
         <slot></slot>
     </div>
 </template>

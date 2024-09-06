@@ -8,7 +8,7 @@ import { createPinia } from 'pinia'
 
 const pinia = createPinia();
 
-createApp(App)
+const app = createApp(App)
     .use(router)
     .use(MotionPlugin, {
         directives: {
@@ -67,7 +67,7 @@ createApp(App)
               x: '-100%',
               rotateY: '35deg',
             },
-            visible: {
+            visibleOnce: {
               // scale: 1,
               opacity: 1,
               x: 0,
@@ -83,4 +83,4 @@ createApp(App)
         },
       })
     .use(pinia)
-    .mount('#app')
+app.mount('#app')

@@ -1,11 +1,10 @@
 import type { ProjectDTO } from '@/models/Project'
 import { defineStore } from 'pinia'
-import axios, { type AxiosResponse } from 'axios';
+import instance from '@/axiosInstance'
 
 export const useProjects = defineStore('projects', {
   state: () => ({
-    _projects: [] as ProjectDTO[],
-    _init: false
+    _projects: [] as ProjectDTO[]
   }),
   getters: {
     getAll(state) {
@@ -59,11 +58,9 @@ export const useProjects = defineStore('projects', {
   },
   actions: {
     init() {
-        if(this._init) return;
-        axios('https://sitechris-geobejt3ca-ew.a.run.app/projects')
+        instance('projects')
         .then((res) => {
             this._projects = res.data
-            this._init = true;
         });
     }
   },

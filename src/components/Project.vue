@@ -15,10 +15,10 @@ const props = withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-    <div :class="`group overflow-hidden drop-shadow-md ${fixedSize && 'w-[400px] h-[200px]'}`">
+    <div :class="`group overflow-hidden drop-shadow-md rounded-md ${fixedSize && 'max-w-[400px] h-[200px]'}`">
         <ImageWithSkeleton :src="parseUrlFromImage(item.thumb_image, 'Projects', item.id, '500')" />
-        <RouterLink :to="{ name: `project-details`, params: { id : item.id} }">
-            <div class="flex items-center justify-center absolute inset-0 opacity-0 transition ease-in-out duration-200 bg-transparent text-surface-100 group-hover:opacity-100 group-hover:cursor-pointer">
+        <RouterLink :to="{ name: `Projet`, params: { id : item.id} }">
+            <div class="flex items-center justify-center absolute inset-0 opacity-0 transition ease-in-out duration-200 bg-transparent text-white group-hover:opacity-100 group-hover:cursor-pointer">
                 <p class="font-bold text-lg text-center">{{ item.title }}</p>
             </div>
         </RouterLink>

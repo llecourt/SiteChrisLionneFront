@@ -24,9 +24,8 @@ const tags = computed(() => projectsStore.getTags);
 
 const handleClick = (tag: string) => {
     const index = currentFilter.value.indexOf(tag);
-    if(index != -1) {
-        currentFilter.value.splice(index, 1);
-    } else {
+    currentFilter.value.pop();
+    if(index == -1) {
         currentFilter.value.push(tag);
     }
 }
@@ -43,7 +42,7 @@ onMounted(() => {
         <Card>
             <TitleText>Quelques exemples de réalisations.</TitleText>
             <Tag v-for="(tag) in tags" :label="tag" :clickable="true" :handleClick="() => handleClick(tag)" :active="currentFilter.indexOf(tag) != -1"/>
-            <MasonryGrid class="min-h-[75vh]">
+            <MasonryGrid>
                 <TransitionGroup name="list">
                     <Project v-for="(item, index) in projects" :item :fixedSize="false" :key="item.id"/>
                 </TransitionGroup>

@@ -4,11 +4,8 @@ import SideBar from './components/SideBar.vue';
 import { usePrestations } from './stores/prestationsStore';
 import { useProjects } from './stores/projetsStore';
 import MainContent from './components/UI/MainContent.vue';
+import Toaster from './components/UI/toast/Toaster.vue';
 
-const items = [{ name: 'Accueil', uri: '/' },
-        { name: 'Prestations', uri: '/prestations' },
-        { name: 'Galerie', uri: '/galerie' },
-        { name: 'Contact', uri: '/contact' }]
 const projectsStore = useProjects();
 projectsStore.init();
 const prestationsStore = usePrestations();
@@ -18,9 +15,10 @@ prestationsStore.init();
 <template>
   <main>
     <div class="flex">
-      <SideBar :items="items"/>
+      <SideBar />
       <MainContent>
-        <RouterView />
+        <Toaster />
+        <RouterView :key="$route.path" />
         <Footer />
       </MainContent>
     </div>
